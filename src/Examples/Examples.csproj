@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\binary\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,7 +28,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\binary\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -150,16 +150,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\D2DLibExportWinForm\D2DLibExportWinForm.csproj">
-      <Project>{40ed2809-aba2-4655-82dd-e38ad12138bb}</Project>
-      <Name>D2DLibExportWinForm</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\D2DLibExport\D2DLibExport.csproj">
-      <Project>{81dd53d8-fcf0-4384-a931-9370fa8e8e67}</Project>
-      <Name>D2DLibExport</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\space_bg.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -180,13 +170,23 @@
   <ItemGroup>
     <None Include="Resources\icons8-himeji-castle-96.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D2DLibExportWinForm\D2DLibExportWinForm.csproj">
+      <Project>{40ed2809-aba2-4655-82dd-e38ad12138bb}</Project>
+      <Name>D2DLibExportWinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\D2DLibExport\D2DLibExport.csproj">
+      <Project>{81dd53d8-fcf0-4384-a931-9370fa8e8e67}</Project>
+      <Name>D2DLibExport</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>copy $(SolutionDir)\$(ConfigurationName)\d2dlib.dll $(TargetDir)</PostBuildEvent>
+    <PostBuildEvent>REM copy $(SolutionDir)$(ConfigurationName)\d2dlib.dll $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
