@@ -147,7 +147,7 @@ namespace unvell.D2DLib.Examples.Properties {
         ///Pursued by the Empire&apos;s sinister agents,
         ///Princess Leia races home aboard her
         ///starship, custodian of the stolen plans
-        ///that can [rest of string was truncated]&quot;;.
+        ///that can save her people [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Star_Subtitle_Original {
             get {
